@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct TabsView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
        
         TabView {
             Tab("Authors",systemImage: "person"){
-                AuthorListView()
+                NavigationStack{
+                    AuthorListView()
+                }
             }
             
             Tab("Books",systemImage: "book"){
                 Text("Books")
             }
         }
+      
         
         
     }
 }
 
 #Preview {
-    TabsView()
+    TabsView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
