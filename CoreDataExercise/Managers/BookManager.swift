@@ -41,6 +41,13 @@ final class BookManager{
         
     }
     
+    func fetchForAuthor(author: Author) throws -> [Book]{
+        let request: NSFetchRequest<Book> = Book.fetchRequest()
+        request.predicate = NSPredicate(format: "author == %@", author)
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Book.title, ascending: true)]
+        
+        return try context.fetch(request)
+    }
     
     
     

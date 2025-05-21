@@ -30,11 +30,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FDE4E4042DDDBF710013FFF2 /* CoreDataExercise */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CoreDataExercise;
-			sourceTree = "<group>";
-		};
 		FDE4E4172DDDBF730013FFF2 /* CoreDataExerciseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CoreDataExerciseTests;
@@ -43,6 +38,11 @@
 		FDE4E4212DDDBF730013FFF2 /* CoreDataExerciseUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CoreDataExerciseUITests;
+			sourceTree = "<group>";
+		};
+		FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CoreDataExercise;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,7 +75,7 @@
 		FDE4E3F92DDDBF710013FFF2 = {
 			isa = PBXGroup;
 			children = (
-				FDE4E4042DDDBF710013FFF2 /* CoreDataExercise */,
+				FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */,
 				FDE4E4172DDDBF730013FFF2 /* CoreDataExerciseTests */,
 				FDE4E4212DDDBF730013FFF2 /* CoreDataExerciseUITests */,
 				FDE4E4032DDDBF710013FFF2 /* Products */,
@@ -108,7 +108,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FDE4E4042DDDBF710013FFF2 /* CoreDataExercise */,
+				FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */,
 			);
 			name = CoreDataExercise;
 			packageProductDependencies = (
