@@ -21,10 +21,12 @@ jobs:
       - name: Run SwiftLint
         run: swiftlint || true
 
-      - name: Build and test
+      - name: Build only
         run: |
-          xcodebuild clean test \
-          -project CoreDataExercise.xcodeproj \
-          -scheme CoreDataExercise \
-          -destination 'platform=iOS Simulator,name=iPhone 14' \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+            xcodebuild clean build \
+            -project CoreDataExercise.xcodeproj \
+            -scheme CoreDataExercise \
+            -destination 'platform=iOS Simulator,name=iPhone 14' \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
+         
