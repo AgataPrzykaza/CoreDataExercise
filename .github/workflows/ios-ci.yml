@@ -1,9 +1,3 @@
-#
-//  ios-ci.yml
-//  CoreDataExercise
-//
-//  Created by Agata Przykaza on 23/05/2025.
-//
 
 name: iOS CI
 
@@ -14,28 +8,23 @@ on:
     branches: [main]
 
 jobs:
-  build-test:
+  build:
     runs-on: macos-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Ruby (for tools like bundler/fastlane)
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.2
-
-      - name: Install SwiftLint (style checker)
+      - name: Install SwiftLint
         run: brew install swiftlint
 
       - name: Run SwiftLint
         run: swiftlint || true
 
-      - name: Build and run tests
+      - name: Build and test
         run: |
           xcodebuild clean test \
-            -project CoreDataExercise.xcodeproj \
-            -scheme CoreDataExercise \
-            -destination 'platform=iOS Simulator,name=iPhone 14' \
-            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          -project CoreDataExercise.xcodeproj \
+          -scheme CoreDataExercise \
+          -destination 'platform=iOS Simulator,name=iPhone 14' \
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
