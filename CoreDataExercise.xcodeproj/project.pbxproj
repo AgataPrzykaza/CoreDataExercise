@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FDE4E4C82DE061C80013FFF2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FDE4E4C72DE061BF0013FFF2 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FDE4E4152DDDBF730013FFF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		FDE4E4022DDDBF710013FFF2 /* CoreDataExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE4E4142DDDBF730013FFF2 /* CoreDataExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE4E41E2DDDBF730013FFF2 /* CoreDataExerciseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataExerciseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE4E4C72DE061BF0013FFF2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +48,11 @@
 		FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CoreDataExercise;
+			sourceTree = "<group>";
+		};
+		FDE4E4BF2DE060D80013FFF2 /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +85,8 @@
 		FDE4E3F92DDDBF710013FFF2 = {
 			isa = PBXGroup;
 			children = (
+				FDE4E4C72DE061BF0013FFF2 /* .gitignore */,
+				FDE4E4BF2DE060D80013FFF2 /* .github */,
 				FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */,
 				FDE4E4172DDDBF730013FFF2 /* CoreDataExerciseTests */,
 				FDE4E4212DDDBF730013FFF2 /* CoreDataExerciseUITests */,
@@ -109,6 +121,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */,
+				FDE4E4BF2DE060D80013FFF2 /* .github */,
 			);
 			name = CoreDataExercise;
 			packageProductDependencies = (
@@ -212,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE4E4C82DE061C80013FFF2 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

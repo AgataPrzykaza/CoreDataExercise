@@ -7,42 +7,64 @@
 
 import SwiftUI
 
+
+
+
 struct BooksByAuthorView: View {
     var author: Author
     
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(DataManagerContainer.self) private var dataManager
     
-    @State private var books: [Book] = []
-    @State private var bookManager: BookManager?
+   
+   
     
-    func loadBooks() {
-        guard let bookManager = bookManager else { return }
+    @FetchRequest private var books: FetchedResults<Book>
+
+    init(author: Author) {
+          
+        _books = FetchRequest<Book>(
+               sortDescriptors: [NSSortDescriptor(keyPath: \Book.title, ascending: true)],
+               predicate: NSPredicate(format: "author == %@", author),
+               animation: .default
+           )
         
-        do {
-           books =  try  bookManager.fetchForAuthor(author: author)
-        } catch {
-            print("Error while fetching books for author \(error.localizedDescription)")
-        }
-      
-    }
+        self.author = author
+       }
+ 
     
+    func deleteBook(at offset: IndexSet){
+        withAnimation {
+            offset.map{books[$0]}.forEach { book in
+                do {
+                    try dataManager.bookManager.delete(book)
+                } catch{
+                    print("Błąd usuwania: \(error)")
+                }
+            }
+            
+           
+        }
+    }
     
     var body: some View {
         List{
             ForEach(books){ book in
                 
-                Text(book.title!)
+                NavigationLink {
+                    BookView(book: book)
+                       
+                } label: {
+                    Text(book.title!)
+                }
+
                 
             }
+            .onDelete(perform: deleteBook)
         }
         .navigationTitle(author.name!)
-        .onAppear{
-            if bookManager == nil {
-                bookManager = BookManager(context: viewContext)
-            }
-            loadBooks()
-            
-        }
+        
+     
     }
 }
 

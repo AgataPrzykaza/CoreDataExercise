@@ -49,7 +49,38 @@ final class BookManager{
         return try context.fetch(request)
     }
     
+    func update(
+        book: Book,
+        title: String? = nil,
+        year: Int16? = nil,
+        isRead: Bool? = nil,
+        author: Author? = nil,
+        genre: Genre? = nil
+    ) throws -> Book{
+        if let title = title {
+            book.title = title
+        }
+        if let year = year {
+            book.year = year
+        }
+        if let isRead = isRead {
+            book.isRead = isRead
+        }
+        if let author = author {
+            book.author = author
+        }
+        if let genre = genre {
+            book.genre = genre
+        }
+
+        try context.save()
+        return book
+    }
+
     
-    
+    func delete(_ book: Book) throws{
+        context.delete(book)
+        try context.save()
+    }
     
 }

@@ -7,12 +7,37 @@
 
 import SwiftUI
 
-struct BookListView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+@Observable
+class BookListViewModel{
+    var books: [Book] = []
+    
+    func loadBooks(){
+        
     }
 }
 
+struct BookListView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @State var viewModel = BookListViewModel()
+    
+    var body: some View {
+        List{
+            ForEach(viewModel.books){ book in
+                
+                VStack{
+                    Text(book.title!)
+                    Text(book.author!.name!)
+                    Text(String(book.year))
+                }
+                
+                
+            }
+        }
+    }
+    
+}
+
 #Preview {
-    BookListView()
+    BookListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    
 }

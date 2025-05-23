@@ -1,0 +1,43 @@
+//
+//  .gitignore
+//  CoreDataExercise
+//
+//  Created by Agata Przykaza on 23/05/2025.
+//
+
+# Xcode
+DerivedData/
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Xcode project user settings
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+# macOS system files
+.DS_Store
+
+# Fastlane (jeśli kiedyś dodasz)
+fastlane/report.xml
+fastlane/screenshots/
+fastlane/test_output/
+
+# Archives and builds
+*.xcarchive
+*.ipa
+
+# User crash logs
+*.crash
+
+# Logs and caches
+*.log
+xcuserdata/
