@@ -50,11 +50,6 @@
 			path = CoreDataExercise;
 			sourceTree = "<group>";
 		};
-		FDE4E4BF2DE060D80013FFF2 /* .github */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = .github;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				FDE4E4C72DE061BF0013FFF2 /* .gitignore */,
-				FDE4E4BF2DE060D80013FFF2 /* .github */,
 				FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */,
 				FDE4E4172DDDBF730013FFF2 /* CoreDataExerciseTests */,
 				FDE4E4212DDDBF730013FFF2 /* CoreDataExerciseUITests */,
@@ -121,7 +115,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				FDE4E4752DDDFC290013FFF2 /* CoreDataExercise */,
-				FDE4E4BF2DE060D80013FFF2 /* .github */,
 			);
 			name = CoreDataExercise;
 			packageProductDependencies = (
